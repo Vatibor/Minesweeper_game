@@ -1,5 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+h1 {
+    text-align: center;
+    margin: 20px;
+}
 .grid {
+    margin: 0 auto;
     height: 400px;
     width: 400px;
     display: flex;
@@ -10,6 +20,13 @@
 .grid div {
     height: 40px;
     width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .bomb {
@@ -17,5 +34,22 @@
 }
 
 .checked {
-    background-color: red;
+    background-color: #CBC2B0;
+    border: 2px solid #938C7E;
+}
+
+.red {
+    color: #DA6646;
+}
+
+.blue {
+    color: #3C88BD;
+}
+
+.green {
+    color: #59BC65;
+}
+
+.purple {
+    color:#B44AC7;
 }
