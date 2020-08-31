@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameArray = emptyArray.concat(bombsArray)
     const shuffledArray = gameArray.sort(() => Math.random() - 0.5)
 
-
+    flagNumber()
     for (let i = 0; i < width * width; i++) {
       const square = document.createElement('div')
       square.setAttribute('id', i)
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // add flag with right click
   function addFlag(square) {
+    
     if (isGameOver) return
     if (!square.classList.contains('checked') && (flags < bombAmount)) {
       if (!square.classList.contains('flag')) {
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flags--
       }
     }
+    flagNumber()
   }
 
   // click on square actions
@@ -103,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       checkSquare(square, currentId)
     }
     square.classList.add('checked')
+  
   }
 
   // check neighbouring squares once square is clicked
@@ -181,5 +184,17 @@ function checkForWin() {
     }
   }
 }
+
+function flagNumber() {
+  document.getElementById('flagNumber').innerHTML = `Flags number: ${bombAmount-flags}`
+}
+
+
+// Toggle 
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
 
 })
